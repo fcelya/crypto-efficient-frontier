@@ -2,6 +2,20 @@ import requests
 import pandas as pd
 
 def get_crypto(crypto,period='86400'):
+    '''
+    Parameters
+    ----------
+    crypto : String
+        Ticker for the crypto.
+    period : String, optional
+        seconds between datapoints. The default is '86400' which stands for 1 day.
+
+    Returns
+    -------
+    df : DataFrame
+        Contains timestamp, open, high, low, close, volume, quotevolume.
+
+    '''
     url_base = 'https://api.cryptowat.ch/markets/'
     url_market = 'binance/'
     url_pair = crypto + 'usdt/'
@@ -29,4 +43,7 @@ def get_crypto(crypto,period='86400'):
         i += 1
     df = pd.DataFrame(data_df, index=index_df)
     return df
+
+def returns(df):
+    return df['close'].pct_change()
 
