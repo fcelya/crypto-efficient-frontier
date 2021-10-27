@@ -7,6 +7,7 @@ The relevant functions developed thus far are:
  
 The main tasks ahead are:
  - Add time considerations for the calculations, so only a certain timeframe can be used for returns and volatility estimations
+ - Get rid of tests
  - Consider what happens for cryptos with different timeframe data availability
  - Add function to return optimal portfolio given risk-free rate
  - Add local database so the api only needs to be called once for every crypto when we need to do new analysis
